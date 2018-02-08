@@ -5,6 +5,12 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
+      - run:
+        name: install dependencies
+        command: |
+          sudo apt-add-repository -y ppa:ubuntu-sdk-team/ppa
+          sudo apt-get -y update; true
+          sudo apt-get -y install qtdeclarative5-dev libqt5webkit5-dev
       - run: echo "A first hello"
       - run: sleep 25
   two:
@@ -19,4 +25,3 @@ workflows:
   one_and_two:
     jobs:
       - one
-      - two
