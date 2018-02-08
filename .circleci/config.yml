@@ -9,7 +9,7 @@ jobs:
           name: install dependencies
           command: |
             sudo apt-get update -y
-            sudo apt-get install qmake
+            sudo apt-get install qt5
       - run: echo "A first hello"
       - run: sleep 25
   two:
